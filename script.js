@@ -1,27 +1,15 @@
-
-//first exercise
-
-/*const div = document.getElementById('navBar');
-div.setAttribute('id','socialNetworkNavigation');
-const li = document.createElement('li')
-const text = document.createTextNode('Logout')
-li.appendChild(text)
-const ul = document.querySelector('div ul')
-ul.appendChild(li)*/
-
-
-// second exercise 
-const div = document.querySelector('div')
-div.style.backgroundColor = 'lightblue'
-div.style.padding = '40px'
-
-const john = document.querySelector('ul')
-john.firstElementChild.style.display = 'none'
-
-const bodyFont = document.querySelector('body')
-bodyFont.style.fontSize == '50px'; //on the browser if i try to enter this statement it says false? 
-
-if(div.style.backgroundColor == 'lightblue'){
-alert('hello x and y') 
+const form1 = document.querySelector(".form");
+form1.addEventListener("keypress", handleForm);
+function handleForm(event) {
+  if (event.key === "Enter") {
+    let S = "";  //empty string to store the value
+    for (let i = 0; i < event.target.value.length; i++) { //go over input 
+        const C = event.target.value.charCodeAt(i) //turn the key to the numeric value
+      if ((C >= 65 && C <= 90) || (C >= 97 && C <= 122)) { //A-Z according to ascii
+        S += event.target.value.charAt(i); // add value to the empty string
+      }
+    }
+    console.log(S);
+  }
 }
 
